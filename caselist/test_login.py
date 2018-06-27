@@ -56,7 +56,7 @@ class ybgcaselogin(unittest.TestCase):
             driver.find_element_by_xpath("//android.widget.EditText[@resource-id='com.istone.xdf:id/et_login_user']").send_keys('zhenghuaining')
             # 定位输入密码框清空并输入密码
             driver.find_element_by_xpath("//android.widget.EditText[@resource-id='com.istone.xdf:id/et_login_psw']").clear()
-            driver.find_element_by_xpath("//android.widget.EditText[@resource-id='com.istone.xdf:id/et_login_psw']").send_keys('Zhn594210')
+            driver.find_element_by_xpath("//android.widget.EditText[@resource-id='com.istone.xdf:id/et_login_psw']").send_keys('********')
             jietudemo.take_screenShot(driver,u'login_输入用户和密码')
             driver.find_element_by_xpath("//android.widget.Button[@resource-id='com.istone.xdf:id/btn_login']").click()  # 定位登录按钮并点击登录按钮
             jietudemo.take_screenShot(driver,u'login_登录成功')
