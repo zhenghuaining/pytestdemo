@@ -38,8 +38,8 @@ def new_report(test_report):
     return file_new
 
 if __name__ == "__main__":
-    test_dir = "D:\\appium_pycharm_demo\\caselist"
-    test_report = "D:\\appium_pycharm_demo\\test_report"
+    test_dir = "D:\\pytestdemo\\caselist"
+    test_report = "D:\\pytestdemo\\test_report"
     #通过unittest框架的discover()找到匹配的测试用例，由HTMLTestRunner的run()方法执行测试用例并生成最新的测试报告
     discover = unittest.defaultTestLoader.discover(test_dir,pattern='test_*.py')
     now = time.strftime("%Y-%m-%d_%H-%M-%S")

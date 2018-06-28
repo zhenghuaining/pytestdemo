@@ -41,17 +41,22 @@ class ybgcaselogout(unittest.TestCase):
         driver.quit()
     def test_logout(self):
         driver = self.driver
+        time.sleep(2)
         try:
             driver.find_element_by_xpath("//android.widget.RadioButton[@resource-id='com.istone.xdf:id/rb_me']").click()
+            time.sleep(1)
             jietudemo.take_screenShot(driver,u'logout_我的页面')
             #向上滑动找到退出按钮元素
             huadongdemo.swipeUp(driver,n=1)
+            time.sleep(1)
             jietudemo.take_screenShot(driver,u'logout_向上滑动显示退出按钮')
             work = driver.find_element_by_xpath("//android.widget.Button[@resource-id='com.istone.xdf:id/btn_exit_me']").text
             try:
                 assert u'退出' in work
                 driver.find_element_by_xpath("//android.widget.Button[@resource-id='com.istone.xdf:id/btn_exit_me']").click()
                 print(u'成功退出并返回登录页')
+                time.sleep(1)
+                jietudemo.take_screenShot(driver,u'成功退出返回登录页')
             except AssertionError as msg:
                 # 直接截图成功
                 '''
@@ -62,9 +67,11 @@ class ybgcaselogout(unittest.TestCase):
                 raise Exception (u'模拟向上滚动失败，未找到退出按钮，退出操作失败')
                 '''
                 #调用jietudemo进行截图
+                time.sleep(1)
                 jietudemo.take_screenShot(driver,u'未找到退出按钮')
                 raise Exception(u'模拟向上滚动失败，未找到退出按钮，退出操作失败')
         except Exception as e:
+            time.sleep(2)
             jietudemo.take_screenShot(driver,u'logout_我的页面失败')
             raise Exception(u'logout_我的页面失败')
 

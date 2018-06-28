@@ -42,8 +42,8 @@ class ybgcaselogin(unittest.TestCase):
 
     def test_login(self):
         #初始化
-        global time
         driver = self.driver
+        time.sleep(2)
         #验证登录页元素是否可以找到，若找不到则fail
         jietudemo.take_screenShot(driver,u'login_page')
         usertext = driver.find_element_by_xpath("//android.widget.Button[@resource-id='com.istone.xdf:id/btn_login']").text
@@ -56,9 +56,10 @@ class ybgcaselogin(unittest.TestCase):
             driver.find_element_by_xpath("//android.widget.EditText[@resource-id='com.istone.xdf:id/et_login_user']").send_keys('zhenghuaining')
             # 定位输入密码框清空并输入密码
             driver.find_element_by_xpath("//android.widget.EditText[@resource-id='com.istone.xdf:id/et_login_psw']").clear()
-            driver.find_element_by_xpath("//android.widget.EditText[@resource-id='com.istone.xdf:id/et_login_psw']").send_keys('***')
+            driver.find_element_by_xpath("//android.widget.EditText[@resource-id='com.istone.xdf:id/et_login_psw']").send_keys('Zhn594210')
             jietudemo.take_screenShot(driver,u'login_输入用户和密码')
             driver.find_element_by_xpath("//android.widget.Button[@resource-id='com.istone.xdf:id/btn_login']").click()  # 定位登录按钮并点击登录按钮
+            time.sleep(2)
             jietudemo.take_screenShot(driver,u'login_登录成功')
         except AssertionError as e:
             # 直接截图成功
@@ -70,6 +71,7 @@ class ybgcaselogin(unittest.TestCase):
             #使用raise方法抛出异常并且终止运行， 同时输出exception
             raise Exception('open loginpage fail')
             '''
+            time.sleep(2)
             jietudemo.take_screenShot(driver,u'打开登录页失败')
             raise  Exception('open loginpage fail')
 

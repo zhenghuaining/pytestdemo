@@ -7,6 +7,8 @@
           <option value="xdf_ybgAPP.gongzuoliu" />
           <option value="xdf_ybgAPP.*" />
           <option value="caselists" />
+          <option value="caselist.test_login.common" />
+          <option value="common" />
         </list>
       </option>
     </inspection_tool>

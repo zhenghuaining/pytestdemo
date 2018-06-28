@@ -39,7 +39,7 @@ class ybgcasegongzuoliu(unittest.TestCase):
         driver.quit()
 
     def test_gongzuoliu(self):
-        global time
+
         driver = self.driver
         #进入工作流页面
 
@@ -48,6 +48,7 @@ class ybgcasegongzuoliu(unittest.TestCase):
             time.sleep(2)
             work1 = driver.find_element_by_xpath("//android.view.View[@content-desc='待办']").get_attribute('name')
         except Exception as e:
+            time.sleep(1)
             jietudemo.take_screenShot(driver,u'未找到待办元素')
             raise Exception(u'未找到待办元素')
 
@@ -58,13 +59,15 @@ class ybgcasegongzuoliu(unittest.TestCase):
 
             # 已办页和待力页面切换
             driver.find_element_by_xpath("//android.view.View[@content-desc='已办']").click()
+            time.sleep(1)
             jietudemo.take_screenShot(driver,u'gongzuoliu_已办')
             driver.find_element_by_xpath("//android.view.View[@content-desc='待办']").click()
+            time.sleep(1)
             jietudemo.take_screenShot(driver,u'gongzuoliu_待办')
             # 模拟点击手机回退按钮
             driver.keyevent(4)
+            time.sleep(1)
             jietudemo.take_screenShot(driver,u'gongzuoliu_回退至主页')
-            time.sleep(2)
         except AssertionError as msg:
             #直接截图成功
             '''
@@ -75,6 +78,7 @@ class ybgcasegongzuoliu(unittest.TestCase):
             raise Exception (u'进入工作流页面失败')
             '''
             #调用jietudemo方法进行截图
+            time.sleep(2)
             jietudemo.take_screenShot(driver,u'进入工作流页面失败')
             raise Exception(u'进入工作流页面失败')
 
