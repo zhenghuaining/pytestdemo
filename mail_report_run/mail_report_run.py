@@ -23,7 +23,7 @@ def send_mail(file_new):
     msg['to'] = 'zhenghuaining@xdf.cn'
     smtp = smtplib.SMTP()
     smtp.connect('smtp.163.com')  # 邮箱服务器
-    smtp.login('zhenghuaining@163.com', 'Chm594210')  # 登录邮箱
+    smtp.login('zhenghuaining@163.com', 'xxx')  # 登录邮箱
     smtp.sendmail('zhenghuaining@163.com', 'zhenghuaining@xdf.cn', msg.as_string())  # 发送者和接收者
     smtp.quit()
     print(u"邮件已发出！注意查收。")
