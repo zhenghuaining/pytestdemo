@@ -8,6 +8,7 @@ import smtplib
 import unittest
 import time
 import os
+import caselist
 '''
 封装发送邮件、筛选最新报告、生成报告
 '''
@@ -39,9 +40,9 @@ def new_report(test_report):
 
 if __name__ == "__main__":
     #test_dir = "D:\\pytestdemo\\caselist"
-    test_dir = "\\caselist"
+    test_dir = "\\pytestdemo\\caselist"
     #test_report = "D:\\pytestdemo\\test_report"
-    test_report = "\\test_report"
+    test_report = "\\pytestdemo\\test_report"
     #通过unittest框架的discover()找到匹配的测试用例，由HTMLTestRunner的run()方法执行测试用例并生成最新的测试报告
     discover = unittest.defaultTestLoader.discover(test_dir,pattern='test_*.py')
     now = time.strftime("%Y-%m-%d_%H-%M-%S")

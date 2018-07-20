@@ -12,8 +12,8 @@ def take_screenShot(driver ,name = "takeShot"):
     '''
     day = time.strftime("%Y-%m-%d" ,time.localtime(time.time()))
     #fq = "D:\\pytestdemo\\png" +day
-    fq = "\\png" + day
-    # fq =os.getcwd()[:-4] +'screenShots\\'+day    根据获取的路径，然后截取路径保存到自己想存放的目录下
+    fq = "\\pytestdemo\\png" + day
+    #fq = os.getcwd()[:-4] +'png\\'+day    #根据获取的路径，然后截取路径保存到自己想存放的目录下
     tm = time.strftime("%Y-%m-%d_%H_%M_%S",time.localtime(time.time()))
     filename = ""
     if os.path.exists(fq):
@@ -24,3 +24,4 @@ def take_screenShot(driver ,name = "takeShot"):
     # c = os.getcwd()
     # r"\\".join(c.split("\\"))     #此2行注销实现的功能为将路径中的\替换为\\
     driver.get_screenshot_as_file(filename)
+    print fq
