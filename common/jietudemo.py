@@ -12,7 +12,7 @@ def take_screenShot(driver ,name = "takeShot"):
     '''
     day = time.strftime("%Y-%m-%d" ,time.localtime(time.time()))
     #fq = "D:\\pytestdemo\\png" +day
-    fq = "\\pytestdemo\\png" + day
+    fq = "\\png" + day
     #fq = os.getcwd()[:-4] +'png\\'+day    #根据获取的路径，然后截取路径保存到自己想存放的目录下
     tm = time.strftime("%Y-%m-%d_%H_%M_%S",time.localtime(time.time()))
     filename = ""
